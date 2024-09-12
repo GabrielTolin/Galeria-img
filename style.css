@@ -1,84 +1,331 @@
-/*navbar*/
+header{
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
 body{
-    background-color:#35524a9f;
-}
-
-#navbar-nav {
-    height: 90px;
-    width: 100%;
-    margin: 0 auto;
-
-}
-
-.navbar-toggler-icon{
-    width: 17px;
-}
-
-.navbar-toggler{
-    width: auto;
-    height: auto;
-}
-
-.fixed-top{
-    position: relative;
     background-color: black;
 }
 
-.contain{
-    margin: 0 auto   !important;
-    width: 100%;
-    height: 70px;  
+p{
+    font-size: 15px;
 }
 
-#imagem{
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-    margin-left: 25px;
-}   
+#logo{
+    border: black;
+    width: 130px;
+    height: 130px;
+    border-radius: 150px;
+    margin-left: 15px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 80px;
+    padding: 80px;
+    width: 50%;
+}
 
 
-.my_custom{
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 20vw;
+    height: 50vh;
+    position: relative;
+    margin-left: 40vw;
+    margin-top: 10vw;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 50px;
+    position: absolute;
+    right: -12px;
     text-align: center;
-    display: block;
+    top: -10px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 1px 1px 3px #000;
 }
 
-.nav-link{
-    margin-right: 50px;
+.close:hover {
+    background: #00d9ff;
 }
 
-
-.my_custom a:hover{
-    color: blueviolet;
-}
-
-.my_custom a:focus{
-    color: lightgray;
-}
-
-
-@media (max-width: 680px) {
+.button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    width: 5vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 11%;
+    margin-top: 5%;
     
-    
-    #imagem{
-        height: 50px;
-        width: 50px;
-        margin-left: 10px;
+}
+
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 30px;
+}
+
+img{
+    border: goldenrod 10px solid;
+    width: 15vw;
+    height: 30vh;
+}
+
+img:hover{
+    transform: scale(1.15);
+}
+
+h1{
+    text-align: center;
+    font-size: 80px;
+    color: goldenrod;
+}
+
+h2{
+    text-align: center;
+    font-size: 50px;
+}
+
+.img-pop{
+    transform: none !important;
+    border: none;
+    margin-left: 2.5vw;
+}
+
+
+@media (max-width: 1450px){
+    header {
+        height: 130px;
+    }
+
+    #logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        padding: 50px;
+    }
+
+    img {
+        width: 20vw;
+        height: 25vh;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .button {
+        width: 8vw;
+    }
+
+    .modalDialog > div {
+        width: 40vw;
+        height: auto;
+        margin-top: 15vh;
+        margin-left: 30vw;
+    }
+
+    .img-pop{
+        margin-left: 10vw;
     }
 }
 
-/*fim navbar*/
+@media (max-width: 819px) {
+    header {
+        height: 120px;
+    }
 
-/* começo do body*/
+    #logo {
+        width: 90px;
+        height: 90px;
+    }
 
+    .container {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 
-.panel-default{
-    background-color: rgba(211, 211, 211, 0.63);
+    img {
+        width: 50vw;
+        height: 30vh;
+        margin-left: 15vw;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .button {
+        width: 15vw;
+        margin-left: 10vw;
+        margin-top: 10%;
+    }
+
+    .modalDialog > div {
+        width: 70vw;
+        height: auto;
+        margin-top: 5vh;
+        margin-left: 13vw;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .img-pop{
+        margin-left: 10vw;
+    }
 }
 
-#head{
-    background-color: lightgray;
+@media (max-width: 700px) {
+    header {
+        height: 120px;
+    }
+
+    #logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .container {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    img {
+        width: 50vw;
+        height: 30vh;
+        margin-left: 13vw;
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .button {
+        width: 15vw;
+        margin-left: 10vw;
+        margin-top: 10%;
+    }
+
+    .modalDialog > div {
+        width: 70vw;
+        height: auto;
+        margin-top: 5vh;
+        margin-left: 13vw;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .img-pop{
+        margin-left: 10vw;
+    }
 }
-h2{
-    text-align: center;
+
+@media (max-width: 430px) {
+    header {
+        height: 100px;
+    }
+
+    #logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    img {
+        width: 70vw;
+        height: 70vw;
+        margin-left: 10vw;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        margin-left: 20vw;
+        
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .button {
+        width: 20vw;
+    }
+
+    .modalDialog > div {
+        width: 90vw;
+        height: auto;
+        margin-top: 15vh;
+        padding: 5px;
+        margin-left: 15vw;
+    }
 }
